@@ -2,7 +2,7 @@
 ```rust
 use std::{sync::Arc, time::Duration};
 
-use bee_runtime::{RuntimeBuilder, Service, ServiceContext, Topic, TopicConfig};
+use runtime::{RuntimeBuilder, Service, ServiceContext, Topic, TopicConfig};
 use tokio::sync::broadcast;
 use tracing::{info, warn};
 
@@ -105,4 +105,5 @@ async fn main() -> Result<(), bee_runtime::RuntimeError> {
         .build();
 
     rt.run().await
-}```
+}
+```
