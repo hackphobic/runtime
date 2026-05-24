@@ -1,0 +1,18 @@
+[package]
+name = "runtime"
+version = "0.1.0"
+edition = "2021"
+license = "Apache-2.0"
+description = "A modern structured-concurrency runtime inspired by the old bee-runtime."
+repository = "https://example.invalid/bee-runtime"
+readme = "README.md"
+
+[dependencies]
+tokio = { version = "1", features = ["rt-multi-thread", "macros", "sync", "time", "signal"] }
+tokio-util = "0.7"
+tracing = "0.1"
+thiserror = "1"
+futures = "0.3"
+
+[dev-dependencies]
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
