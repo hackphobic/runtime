@@ -77,7 +77,7 @@ impl Service for Printer {
                         info!(tick = tick.0, "printer: got tick");
                         if tick.0 >= 10 {
                             warn!("printer: requesting shutdown");
-                            ctx.runtime.request_shutdown(bee_runtime::ShutdownReason::Requested);
+                            ctx.runtime.request_shutdown(runtime::ShutdownReason::Requested);
                         }
                     }
                 }
@@ -88,7 +88,7 @@ impl Service for Printer {
 }
 
 #[tokio::main]
-async fn main() -> Result<(), bee_runtime::RuntimeError> {
+async fn main() -> Result<(), runtime::RuntimeError> {
     tracing_subscriber::fmt()
         .with_env_filter("info")
         .init();
